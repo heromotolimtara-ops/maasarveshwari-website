@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maa Sarveshwari Automobiles – Hero MotoCorp Dealer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,600;0,800;0,900;1,700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8131A;
+    --red-dark: #a50d12;
+    --red-glow: rgba(232,19,26,0.25);
+    --black: #0a0a0a;
+    --steel: #1a1c1f;
+    --steel2: #242629;
+    --muted: #6b7280;
+    --light: #f5f5f0;
+    --white: #ffffff;
+    --accent: #FFD700;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 3rem;
+    height: 68px;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .nav-logo .badge {
+    width: 36px; height: 36px; background: var(--red);
+    border-radius: 50%; display: grid; place-items: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 1rem; letter-spacing: -0.5px;
+  }
+  .nav-logo span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 1.1rem; letter-spacing: 0.5px;
+    text-transform: uppercase; line-height: 1.1;
+  }
+  .nav-logo span small {
+    display: block; font-weight: 300; font-size: 0.65rem;
+    color: var(--red); letter-spacing: 2px;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.7); text-decoration: none;
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px;
+    text-transform: uppercase; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--red); }
+  .nav-cta {
+    background: var(--red); color: #fff; border: none;
+    padding: 0.55rem 1.4rem; font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 0.9rem; letter-spacing: 1px;
+    text-transform: uppercase; cursor: pointer; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--red-dark); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+    padding-top: 68px;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0305 50%, #0a0a0a 100%);
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.02) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.02) 60px);
+  }
+  .hero-noise {
+    position: absolute; inset: 0; z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .hero-left {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 5rem 3rem 4rem 5rem;
+  }
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--red);
+    margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 32px; height: 2px; background: var(--red);
+  }
+  .hero-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(3.5rem, 6vw, 6rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title em {
+    font-style: italic; color: var(--red);
+    display: block;
+  }
+  .hero-sub {
+    color: rgba(255,255,255,0.55);
+    font-size: 1rem; line-height: 1.7;
+    max-width: 380px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--red); color: #fff;
+    padding: 0.85rem 2.2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 1rem; letter-spacing: 1.5px;
+    text-transform: uppercase; border: none; cursor: pointer;
+    transition: all 0.2s; text-decoration: none; display: inline-block;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent; color: #fff;
+    padding: 0.85rem 2.2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 1rem; letter-spacing: 1.5px;
+    text-transform: uppercase; border: 1px solid rgba(255,255,255,0.3);
+    cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--red); color: var(--red); }
+
+  .hero-stats {
+    margin-top: 3.5rem;
+    display: flex; gap: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.2rem; font-weight: 900; color: var(--red);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.72rem; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 1px; margin-top: 0.25rem;
+  }
+
+  .hero-right {
+    position: relative; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    padding: 2rem;
+  }
+  .hero-visual {
+    position: relative; width: 100%; max-width: 520px;
+  }
+  .hero-visual .bike-placeholder {
+    width: 100%; aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--steel) 0%, var(--steel2) 100%);
+    border: 1px solid rgba(255,255,255,0.07);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 1rem; position: relative; overflow: hidden;
+  }
+  .bike-placeholder::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, var(--red-glow) 0%, transparent 70%);
+  }
+  .bike-icon {
+    font-size: 5rem; line-height: 1;
+    filter: drop-shadow(0 0 30px var(--red));
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .bike-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--red);
+  }
+
+  .hero-badge {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    width: 90px; height: 90px;
+    background: var(--red);
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-align: center; line-height: 1.1;
+    animation: spin-badge 8s linear infinite;
+  }
+  @keyframes spin-badge {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .hero-badge span:first-child { font-size: 1.4rem; font-weight: 900; }
+  .hero-badge span:last-child { font-size: 0.55rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* ─── RED BANNER ─── */
+  .red-banner {
+    background: var(--red);
+    padding: 0.8rem 0;
+    overflow: hidden;
+  }
+  .marquee-track {
+    display: flex; gap: 3rem;
+    animation: marquee 18s linear infinite;
+    white-space: nowrap;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .marquee-item {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: rgba(255,255,255,0.9);
+    flex-shrink: 0;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .marquee-item::after {
+    content: '◆'; color: rgba(255,255,255,0.4); font-size: 0.5rem;
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 5rem 5%; }
+  .section-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--red);
+    margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-tag::before {
+    content: ''; display: inline-block; width: 24px; height: 2px; background: var(--red);
+  }
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 900; text-transform: uppercase;
+    line-height: 0.95; letter-spacing: -1px;
+    margin-bottom: 1rem;
+  }
+  .section-title em { color: var(--red); font-style: italic; }
+
+  /* ─── SERVICES ─── */
+  .services { background: var(--steel); }
+  .services-header { max-width: 500px; margin-bottom: 3rem; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .service-card {
+    background: var(--steel);
+    padding: 2.5rem 2rem;
+    transition: background 0.2s;
+    cursor: default;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px; background: var(--red);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover { background: var(--steel2); }
+  .service-icon {
+    font-size: 2.2rem; margin-bottom: 1.2rem;
+    display: block;
+  }
+  .service-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 0.6rem;
+  }
+  .service-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+  /* ─── POPULAR BIKES ─── */
+  .bikes-section { background: var(--black); }
+  .bikes-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 3rem;
+  }
+  .bikes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .bike-card {
+    background: var(--steel);
+    border: 1px solid rgba(255,255,255,0.06);
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+    position: relative;
+  }
+  .bike-card:hover { transform: translateY(-6px); border-color: var(--red); }
+  .bike-card-img {
+    height: 180px;
+    background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .bike-card-img::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
+    background: linear-gradient(to top, var(--steel), transparent);
+  }
+  .bike-card-body { padding: 1.4rem; }
+  .bike-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--red);
+    margin-bottom: 0.4rem;
+  }
+  .bike-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem; font-weight: 900; text-transform: uppercase;
+    letter-spacing: 0.5px; line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .bike-specs {
+    display: flex; gap: 1rem;
+    font-size: 0.78rem; color: var(--muted);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .bike-price {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem; font-weight: 900; color: var(--white);
+  }
+  .bike-price small { font-size: 0.7rem; color: var(--muted); font-weight: 400; }
+  .bike-card .btn-sm {
+    margin-top: 0.8rem; display: block; text-align: center;
+    background: transparent; border: 1px solid rgba(255,255,255,0.15);
+    padding: 0.6rem 1rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 0.85rem; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--white);
+    text-decoration: none; transition: all 0.2s;
+  }
+  .bike-card .btn-sm:hover { background: var(--red); border-color: var(--red); }
+
+  /* ─── WHY US ─── */
+  .why-section {
+    background: var(--steel);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: center;
+  }
+  .why-visual {
+    background: var(--steel2);
+    border: 1px solid rgba(255,255,255,0.07);
+    aspect-ratio: 1;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 8rem;
+    position: relative; overflow: hidden;
+  }
+  .why-visual::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 50%, var(--red-glow), transparent 70%);
+  }
+  .why-list { list-style: none; margin-top: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
+  .why-item {
+    display: flex; gap: 1.2rem; align-items: flex-start;
+    padding: 1.2rem;
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid var(--red);
+    transition: background 0.2s;
+  }
+  .why-item:hover { background: rgba(255,255,255,0.06); }
+  .why-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2rem; font-weight: 900; color: var(--red);
+    line-height: 1; flex-shrink: 0; width: 2.5rem;
+  }
+  .why-text h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 0.25rem;
+  }
+  .why-text p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* ─── CONTACT ─── */
+  .contact-section {
+    background: var(--black);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  }
+  .contact-info { }
+  .contact-list { list-style: none; margin-top: 2rem; display: flex; flex-direction: column; gap: 1.5rem; }
+  .contact-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .contact-ico {
+    width: 44px; height: 44px; background: rgba(232,19,26,0.12);
+    border: 1px solid var(--red-glow);
+    display: grid; place-items: center; font-size: 1.1rem; flex-shrink: 0;
+  }
+  .contact-detail h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem;
+  }
+  .contact-detail p { font-size: 0.95rem; color: var(--white); line-height: 1.5; }
+  .contact-detail a { color: var(--red); text-decoration: none; }
+  .contact-detail a:hover { text-decoration: underline; }
+
+  .hours-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;
+    margin-top: 2rem;
+  }
+  .hours-day {
+    font-size: 0.82rem; color: var(--muted); padding: 0.6rem;
+    background: rgba(255,255,255,0.03);
+    display: flex; justify-content: space-between;
+  }
+  .hours-day span:last-child { color: var(--white); }
+
+  .contact-form { }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+  .form-group label {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--steel); border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white); padding: 0.8rem 1rem;
+    font-family: 'Barlow', sans-serif; font-size: 0.9rem;
+    outline: none; transition: border-color 0.2s;
+    appearance: none; -webkit-appearance: none;
+    width: 100%;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--red); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-group select option { background: var(--steel); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #050507;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 2.5rem 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .footer-brand span { color: var(--red); }
+  .footer-copy { font-size: 0.78rem; color: var(--muted); }
+  .footer-hero {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--red);
+  }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    nav { padding: 0 1.2rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 3rem 1.5rem 2rem; }
+    .hero-right { display: none; }
+    .hero-stats { gap: 1.5rem; }
+    section { padding: 3.5rem 5%; }
+    .bikes-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .why-section { grid-template-columns: 1fr; }
+    .why-visual { display: none; }
+    .contact-section { grid-template-columns: 1fr; }
+    .hours-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="badge">MS</div>
+    <span>Maa Sarveshwari<small>Hero MotoCorp Dealer</small></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#bikes">Bikes</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a Visit</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-noise"></div>
+  <div class="hero-left">
+    <p class="hero-eyebrow">Official Hero MotoCorp Dealer</p>
+    <h1 class="hero-title">
+      Ride<br>
+      <em>Bold.</em><br>
+      Ride Hero.
+    </h1>
+    <p class="hero-sub">
+      Maa Sarveshwari Automobiles — your trusted Hero MotoCorp dealership in the region. New bikes, genuine spares, and expert servicing under one roof.
+    </p>
+    <div class="hero-actions">
+      <a href="#bikes" class="btn-primary">Explore Bikes</a>
+      <a href="#contact" class="btn-outline">Get a Quote</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Happy Customers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Models Available</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Years of Trust</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="bike-placeholder">
+        <span class="bike-icon">🏍️</span>
+        <span class="bike-label">Hero MotoCorp Fleet</span>
+      </div>
+      <div class="hero-badge">
+        <span>★4.5</span>
+        <span>Rated</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RED MARQUEE -->
+<div class="red-banner">
+  <div class="marquee-track" id="marquee">
+    <span class="marquee-item">New Arrivals In Stock</span>
+    <span class="marquee-item">Genuine Hero Spare Parts</span>
+    <span class="marquee-item">EMI Starting ₹1,999/mo</span>
+    <span class="marquee-item">Free First Service</span>
+    <span class="marquee-item">Expert Mechanics</span>
+    <span class="marquee-item">Test Ride Available</span>
+    <span class="marquee-item">Insurance Assistance</span>
+    <span class="marquee-item">New Arrivals In Stock</span>
+    <span class="marquee-item">Genuine Hero Spare Parts</span>
+    <span class="marquee-item">EMI Starting ₹1,999/mo</span>
+    <span class="marquee-item">Free First Service</span>
+    <span class="marquee-item">Expert Mechanics</span>
+    <span class="marquee-item">Test Ride Available</span>
+    <span class="marquee-item">Insurance Assistance</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header reveal">
+    <p class="section-tag">What We Offer</p>
+    <h2 class="section-title">Complete <em>Two-Wheeler</em> Solutions</h2>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <span class="service-icon">🏍️</span>
+      <h3>New Bike Sales</h3>
+      <p>Full Hero MotoCorp lineup — from commuters to premium motorcycles. Easy EMI options, exchange offers, and insurance assistance available.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔧</span>
+      <h3>Expert Servicing</h3>
+      <p>Trained technicians perform routine maintenance, engine overhauls, and diagnostics using Hero-certified tools and procedures.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">⚙️</span>
+      <h3>Genuine Spare Parts</h3>
+      <p>Only authentic Hero MotoCorp parts — OEM-certified for safety, performance, and durability. Never compromise on quality.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔄</span>
+      <h3>Exchange Programme</h3>
+      <p>Trade in your old bike and upgrade to a brand new Hero. Fair valuation, transparent process, and instant paperwork.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🛡️</span>
+      <h3>Insurance & Finance</h3>
+      <p>Comprehensive insurance plans and flexible financing options to make your dream bike affordable today.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🛞</span>
+      <h3>Tyres & Accessories</h3>
+      <p>Upgrade your ride with genuine Hero accessories, helmets, riding gear, and tyres — all under one roof.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BIKES -->
+<section class="bikes-section" id="bikes">
+  <div class="bikes-header reveal">
+    <div>
+      <p class="section-tag">Our Fleet</p>
+      <h2 class="section-title">Popular <em>Models</em></h2>
+    </div>
+    <a href="#contact" class="btn-outline">See Full Range →</a>
+  </div>
+  <div class="bikes-grid reveal">
+    <div class="bike-card">
+      <div class="bike-card-img">🏍️</div>
+      <div class="bike-card-body">
+        <p class="bike-tag">Best Seller</p>
+        <h3 class="bike-name">Splendor Plus</h3>
+        <div class="bike-specs">
+          <span>97.2 cc</span>
+          <span>60+ kmpl</span>
+          <span>Alloy Wheels</span>
+        </div>
+        <div class="bike-price">₹74,000 <small>onwards*</small></div>
+        <a href="#contact" class="btn-sm">Enquire Now</a>
+      </div>
+    </div>
+    <div class="bike-card">
+      <div class="bike-card-img">🏍️</div>
+      <div class="bike-card-body">
+        <p class="bike-tag">Most Popular</p>
+        <h3 class="bike-name">HF Deluxe</h3>
+        <div class="bike-specs">
+          <span>97.2 cc</span>
+          <span>65+ kmpl</span>
+          <span>i3S Tech</span>
+        </div>
+        <div class="bike-price">₹68,000 <small>onwards*</small></div>
+        <a href="#contact" class="btn-sm">Enquire Now</a>
+      </div>
+    </div>
+    <div class="bike-card">
+      <div class="bike-card-img">🏍️</div>
+      <div class="bike-card-body">
+        <p class="bike-tag">Premium</p>
+        <h3 class="bike-name">Xtreme 160R</h3>
+        <div class="bike-specs">
+          <span>163 cc</span>
+          <span>45+ kmpl</span>
+          <span>LED Full</span>
+        </div>
+        <div class="bike-price">₹1,17,000 <small>onwards*</small></div>
+        <a href="#contact" class="btn-sm">Enquire Now</a>
+      </div>
+    </div>
+    <div class="bike-card">
+      <div class="bike-card-img">🏍️</div>
+      <div class="bike-card-body">
+        <p class="bike-tag">Scooter</p>
+        <h3 class="bike-name">Destini 125</h3>
+        <div class="bike-specs">
+          <span>124.6 cc</span>
+          <span>51+ kmpl</span>
+          <span>CBS Brakes</span>
+        </div>
+        <div class="bike-price">₹81,000 <small>onwards*</small></div>
+        <a href="#contact" class="btn-sm">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section" id="why">
+  <div class="why-visual reveal">
+    🏆
+  </div>
+  <div class="reveal">
+    <p class="section-tag">Why Choose Us</p>
+    <h2 class="section-title">Built On <em>Trust</em></h2>
+    <ul class="why-list">
+      <li class="why-item">
+        <div class="why-num">01</div>
+        <div class="why-text">
+          <h4>Authorized Hero Dealer</h4>
+          <p>Official Hero MotoCorp dealership — every purchase comes with manufacturer warranty and complete documentation.</p>
+        </div>
+      </li>
+      <li class="why-item">
+        <div class="why-num">02</div>
+        <div class="why-text">
+          <h4>Trained Technicians</h4>
+          <p>Our mechanics are Hero-certified, using state-of-the-art diagnostic tools and genuine parts for every job.</p>
+        </div>
+      </li>
+      <li class="why-item">
+        <div class="why-num">03</div>
+        <div class="why-text">
+          <h4>Transparent Pricing</h4>
+          <p>No hidden charges. We provide clear service quotations before any work begins — your trust is our priority.</p>
+        </div>
+      </li>
+      <li class="why-item">
+        <div class="why-num">04</div>
+        <div class="why-text">
+          <h4>Easy Finance & EMI</h4>
+          <p>Multiple finance partners, minimal paperwork, and fast approvals to put you on the road sooner.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-info reveal">
+    <p class="section-tag">Find Us</p>
+    <h2 class="section-title">Visit Our <em>Showroom</em></h2>
+    <ul class="contact-list">
+      <li class="contact-item">
+        <div class="contact-ico">📍</div>
+        <div class="contact-detail">
+          <h4>Location</h4>
+          <p>Near Chandrapur–Ballarpur Rd,<br>Maharashtra, India</p>
+        </div>
+      </li>
+      <li class="contact-item">
+        <div class="contact-ico">📞</div>
+        <div class="contact-detail">
+          <h4>Call Us</h4>
+          <p><a href="tel:+919289922766">+91 92899 22766</a></p>
+        </div>
+      </li>
+      <li class="contact-item">
+        <div class="contact-ico">🕐</div>
+        <div class="contact-detail">
+          <h4>Opening Hours</h4>
+          <p>Mon – Sat: 9:00 AM – 7:00 PM<br>Sunday: 9:00 AM – 2:00 PM</p>
+        </div>
+      </li>
+      <li class="contact-item">
+        <div class="contact-ico">📦</div>
+        <div class="contact-detail">
+          <h4>Services</h4>
+          <p>Sales · Service · Spare Parts · Finance</p>
+        </div>
+      </li>
+    </ul>
+
+    <div style="margin-top:2rem;">
+      <a href="https://maps.app.goo.gl/FNNBqVwL6PDmqZLR6" target="_blank" class="btn-primary" style="display:inline-block;">
+        Get Directions →
+      </a>
+    </div>
+  </div>
+
+  <div class="contact-form reveal">
+    <p class="section-tag">Quick Enquiry</p>
+    <h2 class="section-title" style="font-size:2.2rem; margin-bottom:1.5rem;">Let's <em>Connect</em></h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="Rahul Sharma">
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="+91 98765 43210">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Interested In</label>
+      <select>
+        <option>New Bike Purchase</option>
+        <option>Bike Servicing</option>
+        <option>Spare Parts</option>
+        <option>Exchange / Trade-in</option>
+        <option>Finance / EMI Enquiry</option>
+        <option>Test Ride Booking</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Preferred Model</label>
+      <select>
+        <option>Splendor Plus</option>
+        <option>HF Deluxe</option>
+        <option>Passion Pro</option>
+        <option>Glamour</option>
+        <option>Xtreme 160R</option>
+        <option>Xpulse 200</option>
+        <option>Destini 125</option>
+        <option>Maestro Edge</option>
+        <option>Other / Not Sure</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Message (Optional)</label>
+      <textarea placeholder="Any specific requirements or questions?"></textarea>
+    </div>
+    <button class="btn-primary" style="width:100%; font-size:1rem; padding:1rem;" onclick="handleSubmit(this)">
+      Send Enquiry
+    </button>
+    <p style="font-size:0.75rem; color:var(--muted); margin-top:0.8rem;">
+      We'll call you back within 24 hours. No spam, promise.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Maa <span>Sarveshwari</span> Automobiles</div>
+  <div class="footer-copy">© 2025 Maa Sarveshwari Automobiles. All rights reserved.</div>
+  <div class="footer-hero">Authorized Hero MotoCorp Dealer</div>
+</footer>
+
+<!-- ─── WHATSAPP WIDGET ─── -->
+<style>
+  /* Floating button */
+  .wa-fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+    font-family: 'Barlow', sans-serif;
+  }
+
+  /* Pulse ring */
+  .wa-btn {
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 24px rgba(37,211,102,0.45);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    border: none;
+    outline: none;
+  }
+  .wa-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 32px rgba(37,211,102,0.6);
+  }
+  .wa-btn::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid rgba(37,211,102,0.5);
+    animation: wa-pulse 2s ease-out infinite;
+  }
+  @keyframes wa-pulse {
+    0%   { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.55); opacity: 0; }
+  }
+  .wa-btn svg {
+    width: 32px;
+    height: 32px;
+    fill: #fff;
+  }
+
+  /* Tooltip label */
+  .wa-label {
+    background: #fff;
+    color: #111;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4rem 0.85rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.25s, transform 0.25s;
+    pointer-events: none;
+    position: relative;
+  }
+  .wa-label::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 5px 0 5px 7px;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff;
+  }
+  .wa-fab:hover .wa-label,
+  .wa-fab.open .wa-label {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Popup chat card */
+  .wa-popup {
+    position: fixed;
+    bottom: 7rem;
+    right: 2rem;
+    z-index: 9998;
+    width: 300px;
+    background: #1a1c1f;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.5);
+    transform: scale(0.85) translateY(20px);
+    transform-origin: bottom right;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s;
+  }
+  .wa-popup.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: auto;
+  }
+
+  .wa-popup-header {
+    background: #25D366;
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .wa-avatar {
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  .wa-popup-header-text h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.1rem;
+  }
+  .wa-popup-header-text p {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .wa-online-dot {
+    width: 7px;
+    height: 7px;
+    background: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: wa-blink 1.5s ease-in-out infinite;
+  }
+  @keyframes wa-blink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .wa-popup-body {
+    padding: 1rem 1.2rem;
+  }
+  .wa-bubble {
+    background: #242629;
+    border-radius: 0 12px 12px 12px;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .wa-bubble::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -7px;
+    border-width: 0 8px 8px 0;
+    border-style: solid;
+    border-color: transparent #242629 transparent transparent;
+  }
+
+  .wa-quick-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .wa-quick-btn {
+    background: transparent;
+    border: 1px solid rgba(37,211,102,0.4);
+    color: #25D366;
+    border-radius: 20px;
+    padding: 0.45rem 1rem;
+    font-size: 0.8rem;
+    font-family: 'Barlow', sans-serif;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s;
+  }
+  .wa-quick-btn:hover {
+    background: rgba(37,211,102,0.1);
+  }
+
+  .wa-start-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    background: #25D366;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .wa-start-btn:hover { background: #1ebe5d; }
+  .wa-start-btn svg {
+    width: 18px; height: 18px; fill: #fff;
+  }
+
+  .wa-popup-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    line-height: 1;
+    transition: background 0.15s;
+  }
+  .wa-popup-close:hover { background: rgba(255,255,255,0.35); }
+
+  @media (max-width: 500px) {
+    .wa-fab { bottom: 1.2rem; right: 1.2rem; }
+    .wa-popup { right: 1rem; width: calc(100vw - 2rem); bottom: 6rem; }
+  }
+</style>
+
+<!-- WhatsApp Popup -->
+<div class="wa-popup" id="waPopup">
+  <div style="position:relative;">
+    <div class="wa-popup-header">
+      <div class="wa-avatar">🏍️</div>
+      <div class="wa-popup-header-text">
+        <h4>Maa Sarveshwari Automobiles</h4>
+        <p><span class="wa-online-dot"></span> Typically replies in minutes</p>
+      </div>
+    </div>
+    <button class="wa-popup-close" onclick="toggleWa()" aria-label="Close">✕</button>
+  </div>
+  <div class="wa-popup-body">
+    <div class="wa-bubble">
+      👋 Hi there! How can we help you today? Choose a quick option or send us a message directly.
+    </div>
+    <div class="wa-quick-btns">
+      <button class="wa-quick-btn" onclick="openWa('I am interested in buying a new Hero bike. Please share details.')">🏍️ New Bike Enquiry</button>
+      <button class="wa-quick-btn" onclick="openWa('I want to book a test ride. Please let me know the availability.')">🗓️ Book a Test Ride</button>
+      <button class="wa-quick-btn" onclick="openWa('I need to schedule a service appointment for my Hero bike.')">🔧 Service Appointment</button>
+      <button class="wa-quick-btn" onclick="openWa('I want to know more about EMI and finance options for Hero bikes.')">💰 Finance / EMI Info</button>
+    </div>
+    <a class="wa-start-btn" onclick="openWa('')">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Start Chat
+    </a>
+  </div>
+</div>
+
+<!-- FAB -->
+<div class="wa-fab" id="waFab">
+  <div class="wa-label">Chat on WhatsApp</div>
+  <button class="wa-btn" onclick="toggleWa()" aria-label="Open WhatsApp chat">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </button>
+</div>
+
+<script>
+  const WA_NUMBER = '9893542151';
+
+  function toggleWa() {
+    const popup = document.getElementById('waPopup');
+    const fab   = document.getElementById('waFab');
+    popup.classList.toggle('visible');
+    fab.classList.toggle('open');
+  }
+
+  function openWa(msg) {
+    const text = msg || 'Hello! I found you on your website and I have an enquiry.';
+    window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank');
+  }
+
+  // Close popup when clicking outside
+  document.addEventListener('click', function(e) {
+    const popup = document.getElementById('waPopup');
+    const fab   = document.getElementById('waFab');
+    if (popup.classList.contains('visible') && !popup.contains(e.target) && !fab.contains(e.target)) {
+      popup.classList.remove('visible');
+      fab.classList.remove('open');
+    }
+  });
+</script>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Form submit
+  function handleSubmit(btn) {
+    btn.textContent = '✓ Enquiry Sent! We\'ll call you soon.';
+    btn.style.background = '#16a34a';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Send Enquiry';
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 4000);
+  }
+</script>
+</body>
+</html>
